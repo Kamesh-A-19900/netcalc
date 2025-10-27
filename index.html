@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="netcalc">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>netcalc</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <script src="ip_allocation.js"></script>
+
+  <!-- Initialize and expose module globally -->
+  <script>
+    if(typeof createIpAllocatorModule === 'function'){
+      const modOrPromise = createIpAllocatorModule();
+      if(modOrPromise instanceof Promise){
+        modOrPromise.then((mod) => {
+          window.IpAllocatorModule = mod;
+        }).catch(console.error);
+      }else{
+        window.IpAllocatorModule = modOrPromise
+      }
+    }else{
+      console.error('createIpAllocatorModule not found — ip_allocator.js may not be loaded.');
+    }
+  </script>
+  <script src="ip_analyzer.js"></script>
+  <script>
+    if(typeof createIpAnalyzerModule === 'function'){
+      const modOrPromise = createIpAnalyzerModule();
+      if(modOrPromise instanceof Promise){
+        modOrPromise.then((mod) => {
+          window.IpAnalyzerModule = mod;
+        }).catch(console.error);
+      }else{
+        window.IpAnalyzerModule = modOrPromise
+      }
+    }else{
+      console.error('createIpAnalyzerModule not found — ip_analyzer.js may not be loaded.');
+    }
+  </script> 
+  <script src="tcp_udp.js"></script>
+
+  <!-- Start module initialization and expose the Promise on window -->
+  <script>
+    if (typeof createTcpUdpModule === 'function') {
+      const modOrPromise = createTcpUdpModule();
+      
+      if (modOrPromise instanceof Promise) {
+        modOrPromise.then((mod) => {
+          window.TcpUdpModule = mod;
+        }).catch(console.error);
+      } else {
+        window.TcpUdpModule = modOrPromise;
+      }
+    } else {
+      console.error('createTcpUdpModule not found — tcp_udp.js may not be loaded.');
+    }
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+  
+
+</body>
+</html>
