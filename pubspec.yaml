@@ -63,7 +63,6 @@ flutter:
   - assets/images/network_hero.png
   - assets/images/tcp_udp.jpg
   - assets/images/subnet.jpg
-  - assets/images/network_visualizer.jpg
   - assets/images/ip_group.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
