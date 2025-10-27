@@ -117,7 +117,6 @@ class _GroupAllocatorPageState extends State<GroupAllocatorPage> {
         return;
       }
 
-      // If parsed is a list, show table-like output
       if (parsed is List) {
         final rows = StringBuffer();
         for (var item in parsed) {
@@ -239,7 +238,6 @@ class _GroupAllocatorPageState extends State<GroupAllocatorPage> {
               ),
               const SizedBox(height: 10),
 
-              // ✅ Scrollable DataTable with height constraint
               SizedBox(
                 height: 400,
                 child: SingleChildScrollView(

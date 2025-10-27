@@ -60,10 +60,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - assets/images/network_hero.png
-  - assets/images/tcp_udp.jpg
-  - assets/images/subnet.jpg
-  - assets/images/ip_group.png
+  - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

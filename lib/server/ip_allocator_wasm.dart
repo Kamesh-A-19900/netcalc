@@ -3,9 +3,7 @@ import 'dart:async';
 import 'dart:js';
 import 'dart:js_util' as js_util;
 
-/// Wrapper for the ip_allocation WASM module compiled with:
-/// -s MODULARIZE=1 -s EXPORT_NAME="createIpAllocatorModule"
-/// and exported function: allocate_ip_groups
+
 class IpAllocatorWasm {
   static dynamic _module;
   static Future<void>? _initFuture;

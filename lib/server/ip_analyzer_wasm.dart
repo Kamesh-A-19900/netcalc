@@ -3,7 +3,6 @@ import 'dart:async';
 import 'dart:js';
 import 'dart:js_util' as js_util;
 
-/// Clean, production-ready wrapper around the tcp_udp WebAssembly module.
 class IpAnalyzerWasm {
   static dynamic _module;
   static Future<void>? _initFuture;

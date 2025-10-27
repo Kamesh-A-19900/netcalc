@@ -63,7 +63,7 @@ void downloadIpAllocationExcel(String jsonStr) {
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   );
   final url = html.Url.createObjectUrlFromBlob(blob);
-  final anchor = html.AnchorElement(href: url)
+  html.AnchorElement(href: url)
     ..download = 'ip_allocations.xlsx'
     ..click();
   html.Url.revokeObjectUrl(url);
