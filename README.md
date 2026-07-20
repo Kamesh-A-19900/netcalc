@@ -40,10 +40,6 @@ npm run dev
 | POST   | /api/subnet   | `{ cidr }`                        |
 | POST   | /api/header   | `{ header }` (hex string)         |
 
-## C Source Files
-
-The original C logic lives in `server/ip_allocation.c`, `server/ip_analyzer.c`, and `server/tcp_udp.c` for reference. All computation is re-implemented in `server/lib/` as plain JavaScript.
-
 ## Running Server Tests
 ```bash
 npm --prefix server test
